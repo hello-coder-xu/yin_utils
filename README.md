@@ -7,7 +7,7 @@
 引用库
     
     dependencies:
-      yin_utils: ^0.0.2
+      yin_utils: ^0.0.3
     
 引用包
     
