@@ -7,7 +7,7 @@ class RegexUtil {
     return new RegExp("[1-9]").hasMatch(value) ? 1 : 0;
   }
 
-  ///检测数字
+  ///检测字母
   static int isLetter(String value) {
     return new RegExp("[A-Za-z]").hasMatch(value) ? 1 : 0;
   }

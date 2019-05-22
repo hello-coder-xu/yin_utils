@@ -1,19 +1,12 @@
 import 'package:flutter/material.dart';
-import 'dart:ui' as ui show window;
+import 'dart:ui' as ui;
 
 ///默认设计稿尺寸（单位 dp or pt）
 double _designW = 360.0;
 double _designH = 640.0;
 double _designD = 3.0;
 
-/**
- * 配置设计稿尺寸（单位 dp or pt）
- * w 宽
- * h 高
- * density 像素密度
- */
-
-/// 配置设计稿尺寸 屏幕 宽，高，密度。
+/// 屏幕 宽，高，密度。
 void setDesignWHD(double w, double h, {double density = 3.0}) {
   _designW = w;
   _designH = h;
@@ -50,27 +43,24 @@ class ScreenUtil {
     }
   }
 
-  /// screen width
+
   /// 屏幕 宽
   double get screenWidth => _screenWidth;
 
-  /// screen height
+
   /// 屏幕 高
   double get screenHeight => _screenHeight;
 
-  /// appBar height
   /// appBar 高
   double get appBarHeight => _appBarHeight;
 
-  /// screen density
   /// 屏幕 像素密度
   double get screenDensity => _screenDensity;
 
-  /// status bar Height
   /// 状态栏高度
   double get statusBarHeight => _statusBarHeight;
 
-  /// bottom bar Height
+  /// 底部状态栏高度
   double get bottomBarHeight => _bottomBarHeight;
 
   /// media Query Data
@@ -125,9 +115,7 @@ class ScreenUtil {
     return size * getScreenW(context) / _designW;
   }
 
-  /// returns the size after adaptation according to the screen height.(unit dp or pt)
   /// 返回根据屏幕高适配后尺寸 （单位 dp or pt）
-  /// size unit dp or pt
   static double getScaleH(BuildContext context, double size) {
     if (context == null || getScreenH(context) == 0.0) return size;
     return size * getScreenH(context) / _designH;
