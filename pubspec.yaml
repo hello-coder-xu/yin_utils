@@ -2,7 +2,7 @@ name: yin_utils
 description: A new Flutter package.
 version: 0.0.1
 author: yin <yin_8023@163.com>
-homepage:
+homepage: https://github.com/yx544806988/yin_utils.git
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -13,7 +13,6 @@ dependencies:
   shared_preferences: ^0.5.2
   synchronized: ^2.1.0
   flutter_toast_pk: ^0.0.1               # Toast 提示
-
 
 
 dev_dependencies:
