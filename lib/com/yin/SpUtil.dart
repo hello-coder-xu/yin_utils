@@ -9,6 +9,7 @@ class SpUtil {
   static SpUtil _singleton;
   static SharedPreferences _prefs;
   static Lock _lock = Lock();
+  static bool isDebug = false;
 
   static Future<SpUtil> getInstance() async {
     if (_singleton == null) {
@@ -34,12 +35,14 @@ class SpUtil {
   /// put object.
   static Future<bool> putObject(String key, Object value) {
     if (_prefs == null) return null;
+    key += isDebug ? "_debug" : "";
     return _prefs.setString(key, value == null ? "" : json.encode(value));
   }
 
   /// get object.
   static Map getObject(String key) {
     if (_prefs == null) return null;
+    key += isDebug ? "_debug" : "";
     String _data = _prefs.getString(key);
     return (_data == null || _data.isEmpty) ? null : json.decode(_data);
   }
@@ -50,12 +53,14 @@ class SpUtil {
     List<String> _dataList = list?.map((value) {
       return json.encode(value);
     })?.toList();
+    key += isDebug ? "_debug" : "";
     return _prefs.setStringList(key, _dataList);
   }
 
   /// get object list.
   static List<Map> getObjectList(String key) {
     if (_prefs == null) return null;
+    key += isDebug ? "_debug" : "";
     List<String> dataLis = _prefs.getStringList(key);
     return dataLis?.map((value) {
       Map _dataMap = json.decode(value);
@@ -66,72 +71,84 @@ class SpUtil {
   /// get string.
   static String getString(String key, {String defValue = ''}) {
     if (_prefs == null) return defValue;
+    key += isDebug ? "_debug" : "";
     return _prefs.getString(key) ?? defValue;
   }
 
   /// put string.
   static Future<bool> putString(String key, String value) {
     if (_prefs == null) return null;
+    key += isDebug ? "_debug" : "";
     return _prefs.setString(key, value);
   }
 
   /// get bool.
   static bool getBool(String key, {bool defValue = false}) {
     if (_prefs == null) return defValue;
+    key += isDebug ? "_debug" : "";
     return _prefs.getBool(key) ?? defValue;
   }
 
   /// put bool.
   static Future<bool> putBool(String key, bool value) {
     if (_prefs == null) return null;
+    key += isDebug ? "_debug" : "";
     return _prefs.setBool(key, value);
   }
 
   /// get int.
   static int getInt(String key, {int defValue = 0}) {
     if (_prefs == null) return defValue;
+    key += isDebug ? "_debug" : "";
     return _prefs.getInt(key) ?? defValue;
   }
 
   /// put int.
   static Future<bool> putInt(String key, int value) {
     if (_prefs == null) return null;
+    key += isDebug ? "_debug" : "";
     return _prefs.setInt(key, value);
   }
 
   /// get double.
   static double getDouble(String key, {double defValue = 0.0}) {
     if (_prefs == null) return defValue;
+    key += isDebug ? "_debug" : "";
     return _prefs.getDouble(key) ?? defValue;
   }
 
   /// put double.
   static Future<bool> putDouble(String key, double value) {
     if (_prefs == null) return null;
+    key += isDebug ? "_debug" : "";
     return _prefs.setDouble(key, value);
   }
 
   /// get string list.
   static List<String> getStringList(String key, {List<String> defValue = const []}) {
     if (_prefs == null) return defValue;
+    key += isDebug ? "_debug" : "";
     return _prefs.getStringList(key) ?? defValue;
   }
 
   /// put string list.
   static Future<bool> putStringList(String key, List<String> value) {
     if (_prefs == null) return null;
+    key += isDebug ? "_debug" : "";
     return _prefs.setStringList(key, value);
   }
 
   /// get dynamic.
   static dynamic getDynamic(String key, {Object defValue}) {
     if (_prefs == null) return defValue;
+    key += isDebug ? "_debug" : "";
     return _prefs.get(key) ?? defValue;
   }
 
   /// have key.
   static bool haveKey(String key) {
     if (_prefs == null) return null;
+    key += isDebug ? "_debug" : "";
     return _prefs.getKeys().contains(key);
   }
 
@@ -144,6 +161,7 @@ class SpUtil {
   /// remove.
   static Future<bool> remove(String key) {
     if (_prefs == null) return null;
+    key += isDebug ? "_debug" : "";
     return _prefs.remove(key);
   }
 

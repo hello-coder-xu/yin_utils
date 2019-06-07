@@ -18,8 +18,10 @@ void main() {
     print('test value=$value');
 
     ///错误时
-    String error=NumberUtil.formatNumString("1234567t.03");
-    print('test error=$error');
+//    String error=NumberUtil.formatNumString("1234567t.03");
+//    print('test error=$error');
+
+
 
   });
 }
