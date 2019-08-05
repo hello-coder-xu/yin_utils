@@ -1,5 +1,3 @@
-
-
 ///检测工具
 class RegexUtil {
   ///检测数字
@@ -27,4 +25,5 @@ class RegexUtil {
   static bool isChina(String value) {
     return new RegExp("[\u4e00-\u9fa5]").hasMatch(value);
   }
+
 }

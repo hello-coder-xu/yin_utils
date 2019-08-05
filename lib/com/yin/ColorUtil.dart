@@ -1,4 +1,6 @@
+import 'dart:math';
 
+import 'package:flutter/material.dart';
 
 ///颜色工具
 class ColorUtil {
@@ -11,4 +13,8 @@ class ColorUtil {
     }
     return int.parse(hexColor, radix: 16);
   }
+
+  ///随机颜色
+  static get randomColor =>
+      Color.fromARGB(100, new Random().nextInt(255), new Random().nextInt(255), new Random().nextInt(255));
 }

@@ -21,6 +21,7 @@ void main() {
 //    String error=NumberUtil.formatNumString("1234567t.03");
 //    print('test error=$error');
 
+    print(ColorUtil.randomColor);
 
 
   });
